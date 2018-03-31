@@ -19,14 +19,7 @@
     <h1>5 Before Die</h1>
     <nav>
       <ul class="nav-links">
-        <li><a href="#">Business</a></li>
-        <li><a href="#">Marketing</a></li>
-        <li><a href="#">Futurism</a></li>
-        <li><a href="#">Design</a></li>
-        <li><a href="#">Productivity</a></li>
-        <li><a href="#">Life</a></li>
-        <li><a href="#">Finances</a></li>
-        <li><a href="#">Technology</a></li>
+        <li v-for="subject in subjects"><a href="#">{{ subject }}</a></li>
       </ul>
     </nav>
     <section class="recommendations">
@@ -38,14 +31,13 @@
         <ul class="books-wrapper">
           <li v-for="book in list.books">
             <a :href="book.url">
-              <img :src="book.img" width="90" height="135">
+              <img :src="book.img" width="90" height="135" :alt="book.name">
             </a>
           </li>
         </ul>
       </article>
     </section>
   </div>
-  <script src="assets/js/books.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="assets/js/index.js"></script>
 </body>
